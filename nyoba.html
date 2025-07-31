@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNOZONE - Electronics Superstore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .logo-text {
+            color: #ff0000;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        }
+        
+        .nav-link:hover {
+            color: #ff0000 !important;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+            border-color: #ff0000;
+        }
+        
+        .btn-primary {
+            background-color: #ff0000;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .price-tag {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .discount-badge {
+            background-color: #ff0000;
+            color: white;
+        }
+        
+        .footer-link:hover {
+            color: #ff0000 !important;
+        }
+        
+        .search-bar:focus {
+            border-color: #ff0000;
+            box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="bg-black border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <i class="fas fa-bolt text-red-600 text-2xl mr-2"></i>
+                    <h1 class="logo-text text-2xl font-bold">TECHNOZONE</h1>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden md:block w-1/3 mx-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..." class="search-bar w-full bg-gray-900 text-white px-4 py-2 rounded-full border border-gray-700 focus:outline-none">
+                        <button class="absolute right-0 top-0 h-full px-4 text-gray-400 hover:text-red-600">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="nav-link text-white hover:text-red-600">Home</a>
+                    <a href="#" class="nav-link text-white hover:text-red-600">Products</a>
+                    <a href="#" class="nav-link text-white hover:text-red-600">Deals</a>
+                    <a href="#" class="nav-link text-white hover:text-red-600">About</a>
+                    <a href="#" class="nav-link text-white hover:text-red-600">Contact</a>
+                </nav>
+                
+                <!-- Cart and User Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-white hover:text-red-600">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="ml-1 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center -mt-6 -mr-3">3</span>
+                    </a>
+                    <a href="#" class="text-white hover:text-red-600">
+                        <i class="fas fa-user text-xl"></i>
+                    </a>
+                    <button class="md:hidden text-white hover:text-red-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">UPGRADE YOUR TECH GAME</h1>
+            <p class="text-xl md:text-2xl mb-8">Discover the latest electronics at unbeatable prices</p>
+            <div class="flex justify-center space-x-4">
+                <button class="btn-primary px-6 py-3 rounded-full font-bold">SHOP NOW</button>
+                <button class="bg-transparent border border-white text-white px-6 py-3 rounded-full font-bold hover:bg-red-600 hover:border-red-600">EXPLORE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-12 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-red-600">SHOP BY CATEGORY</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden text-center p-6 hover:bg-gray-700 transition cursor-pointer">
+                    <i class="fas fa-laptop text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Laptops</h3>
+                    <p class="text-gray-400">Premium performance machines</p>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden text-center p-6 hover:bg-gray-700 transition cursor-pointer">
+                    <i class="fas fa-mobile-alt text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Smartphones</h3>
+                    <p class="text-gray-400">Latest flagship devices</p>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden text-center p-6 hover:bg-gray-700 transition cursor-pointer">
+                    <i class="fas fa-headphones text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Audio</h3>
+                    <p class="text-gray-400">Immersive sound experience</p>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden text-center p-6 hover:bg-gray-700 transition cursor-pointer">
+                    <i class="fas fa-gamepad text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Gaming</h3>
+                    <p class="text-gray-400">Next-level gaming gear</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-12 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-red-600">FEATURED PRODUCTS</h2>
+                <a href="#" class="text-white hover:text-red-600 flex items-center">
+                    View All <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-gray-900 rounded-lg overflow-hidden p-4">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Gaming Laptop" class="w-full h-48 object-cover rounded">
+                        <div class="discount-badge absolute top-2 right-2 px-2 py-1 rounded text-xs font-bold">-15%</div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-white">Quantum X9 Gaming Laptop</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="price-tag text-xl">$1,299.99</span>
+                            <span class="text-gray-400 line-through ml-2 text-sm">$1,529.99</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-400 text-sm ml-1">(42)</span>
+                        </div>
+                        <button class="btn-primary w-full mt-4 py-2 rounded font-bold">ADD TO CART</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-gray-900 rounded-lg overflow-hidden p-4">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Smartphone" class="w-full h-48 object-cover rounded">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-white">Nebula Z Pro Smartphone</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="price-tag text-xl">$899.99</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-400 text-sm ml-1">(36)</span>
+                        </div>
+                        <button class="btn-primary w-full mt-4 py-2 rounded font-bold">ADD TO CART</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-gray-900 rounded-lg overflow-hidden p-4">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Headphones" class="w-full h-48 object-cover rounded">
+                        <div class="discount-badge absolute top-2 right-2 px-2 py-1 rounded text-xs font-bold">-25%</div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-white">SonicBlast Pro Headphones</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="price-tag text-xl">$199.99</span>
+                            <span class="text-gray-400 line-through ml-2 text-sm">$269.99</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-400 text-sm ml-1">(128)</span>
+                        </div>
+                        <button class="btn-primary w-full mt-4 py-2 rounded font-bold">ADD TO CART</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-gray-900 rounded-lg overflow-hidden p-4">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart Watch" class="w-full h-48 object-cover rounded">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-white">PulseFit Smart Watch 3</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="price-tag text-xl">$249.99</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-400 text-sm ml-1">(87)</span>
+                        </div>
+                        <button class="btn-primary w-full mt-4 py-2 rounded font-bold">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Banner -->
+    <section class="py-12 bg-gradient-to-r from-gray-900 to-black border-t border-b border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="bg-gray-800 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-red-600 mb-4">FLASH SALE!</h2>
+                    <p class="text-xl text-white mb-6">Get 30% off on all gaming accessories this weekend only. Don't miss out!</p>
+                    <div class="flex space-x-2 mb-6">
+                        <div class="bg-gray-900 text-white text-center py-2 px-3 rounded">
+                            <div class="text-xl font-bold">02</div>
+                            <div class="text-xs">Days</div>
+                        </div>
+                        <div class="bg-gray-900 text-white text-center py-2 px-3 rounded">
+                            <div class="text-xl font-bold">14</div>
+                            <div class="text-xs">Hours</div>
+                        </div>
+                        <div class="bg-gray-900 text-white text-center py-2 px-3 rounded">
+                            <div class="text-xl font-bold">38</div>
+                            <div class="text-xs">Mins</div>
+                        </div>
+                        <div class="bg-gray-900 text-white text-center py-2 px-3 rounded">
+                            <div class="text-xl font-bold">22</div>
+                            <div class="text-xs">Secs</div>
+                        </div>
+                    </div>
+                    <button class="btn-primary px-8 py-3 rounded-full font-bold">SHOP NOW</button>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Gaming Accessories" class="rounded-lg max-h-64 w-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="py-12 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-red-600">LATEST TECH NEWS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- News 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tech News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-red-600 text-sm mb-2">July 15, 2023</div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Next-Gen Processors Launching Next Month</h3>
+                        <p class="text-gray-400 mb-4">The new lineup promises 40% better performance with 30% less power consumption compared to previous generation.</p>
+                        <a href="#" class="text-red-600 hover:underline flex items-center">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- News 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tech News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-red-600 text-sm mb-2">July 10, 2023</div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Foldable Phones: The Future of Mobile?</h3>
+                        <p class="text-gray-400 mb-4">With major brands jumping on the foldable trend, we analyze whether these devices are worth the premium price.</p>
+                        <a href="#" class="text-red-600 hover:underline flex items-center">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- News 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Tech News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-red-600 text-sm mb-2">July 5, 2023</div>
+                        <h3 class="text-xl font-semibold text-white mb-3">The Rise of AI in Consumer Electronics</h3>
+                        <p class="text-gray-400 mb-4">How artificial intelligence is transforming the way we interact with our devices and what to expect in coming years.</p>
+                        <a href="#" class="text-red-600 hover:underline flex items-center">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-red-600">WHAT OUR CUSTOMERS SAY</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">2 days ago</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">"The Quantum X9 laptop I bought from TECHNOZONE is an absolute beast! The delivery was super fast and the customer support was excellent."</p>
+                    <div class="flex items-center">
+                        <div class="bg-red-600 text-white rounded-full h-10 w-10 flex items-center justify-center mr-3">JD</div>
+                        <div>
+                            <h4 class="font-semibold text-white">John D.</h4>
+                            <p class="text-gray-400 text-sm">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">1 week ago</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">"I've been shopping at TECHNOZONE for years. Their prices are competitive and I've never had any issues with their products. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-red-600 text-white rounded-full h-10 w-10 flex items-center justify-center mr-3">SM</div>
+                        <div>
+                            <h4 class="font-semibold text-white">Sarah M.</h4>
+                            <p class="text-gray-400 text-sm">Loyal Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">3 days ago</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">"The flash sale was amazing! Got my new headphones at 25% off. The product arrived earlier than expected and works perfectly. Will shop here again."</p>
+                    <div class="flex items-center">
+                        <div class="bg-red-600 text-white rounded-full h-10 w-10 flex items-center justify-center mr-3">AR</div>
+                        <div>
+                            <h4 class="font-semibold text-white">Alex R.</h4>
+                            <p class="text-gray-400 text-sm">First-time Buyer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-gradient-to-r from-black to-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-red-600">STAY UPDATED</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for exclusive deals, new arrivals, and tech news delivered straight to your inbox.</p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow bg-gray-800 text-white px-4 py-3 rounded-l focus:outline-none focus:ring-2 focus:ring-red-600">
+                <button class="btn-primary px-6 py-3 rounded-r font-bold">SUBSCRIBE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bolt text-red-600 text-2xl mr-2"></i>
+                        <h3 class="logo-text text-2xl font-bold">TECHNOZONE</h3>
+                    </div>
+                    <p class="mb-4">Your one-stop shop for all things tech. We bring you the latest electronics at competitive prices with exceptional service.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-red-600"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-red-600"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-red-600"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">SHOP</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link hover:text-red-600">Laptops & Computers</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Smartphones & Tablets</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Audio & Headphones</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Gaming</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Smart Home</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">CUSTOMER SERVICE</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link hover:text-red-600">Contact Us</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">FAQs</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Shipping Policy</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Returns & Refunds</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Product Support</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Track Order</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">ABOUT US</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link hover:text-red-600">Our Story</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Careers</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Blog</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Press</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link hover:text-red-600">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2023 TECHNOZONE. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <img src="https://via.placeholder.com/40x25?text=VISA" alt="Visa" class="h-6">
+                    <img src="https://via.placeholder.com/40x25?text=MC" alt="Mastercard" class="h-6">
+                    <img src="https://via.placeholder.com/40x25?text=AMEX" alt="American Express" class="h-6">
+                    <img src="https://via.placeholder.com/40x25?text=PP" alt="PayPal" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden" id="mobileMenu">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center">
+                    <i class="fas fa-bolt text-red-600 text-2xl mr-2"></i>
+                    <h1 class="logo-text text-2xl font-bold">TECHNOZONE</h1>
+                </div>
+                <button id="closeMobileMenu" class="text-white text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mb-6">
+                <div class="relative">
+                    <input type="text" placeholder="Search products..." class="search-bar w-full bg-gray-800 text-white px-4 py-3 rounded border border-gray-700 focus:outline-none">
+                    <button class="absolute right-0 top-0 h-full px-4 text-gray-400 hover:text-red-600">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="flex flex-col space-y-4">
+                <a href="#" class="nav-link text-white text-xl py-2">Home</a>
+                <a href="#" class="nav-link text-white text-xl py-2">Products</a>
+                <a href="#" class="nav-link text-white text-xl py-2">Deals</a>
+                <a href="#" class="nav-link text-white text-xl py-2">About</a>
+                <a href="#" class="nav-link text-white text-xl py-2">Contact</a>
+                <a href="#" class="nav-link text-white text-xl py-2">Account</a>
+                <a href="#" class="nav-link text-white text-xl py-2">Cart</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+            });
+            
+            closeMobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+            
+            // Product card hover effect for touch devices
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove active class from all cards
+                    productCards.forEach(c => c.classList.remove('active'));
+                    // Add active class to clicked card
+                    this.classList.add('active');
+                });
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('section.bg-gradient-to-r.from-black.to-gray-900 form');
+            if(newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    if(emailInput.value) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        emailInput.value = '';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
