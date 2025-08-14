@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form 
+    action="contact.php" 
+    method="POST">
+      <fieldset>
+        <legend>Biodata</legend>
+
+        <p>
+          <label>Nama</label>
+          <input 
+          type="text" 
+          name="nama" 
+          placeholder="Nama Lengkap..." />
+        </p>
+
+        <p>
+          <label>Tanggal Lahir:</label>
+          <input 
+          type="date" 
+          name="tanggal" />
+        </p>
+
+        <p>
+          <label>Umur:</label>
+          <input 
+          type="number" 
+          min="10" max="110" 
+          name="Umur"
+          placeholder="Max 110" />
+        </p>
+        
+        <p>
+          <label>Agama:</label>
+          <select name="agama">
+            <option value="select">Ateisme</option>
+            <option value="islam">Islam</option>
+            <option value="kristen">Kristen</option>
+            <option value="hindu">Hindu</option>
+            <option value="budha">Budha</option>
+          </select>
+        </p>
+        
+
+        <p>
+          <label>Email</label>
+          <input 
+          type="email" 
+          name="email" 
+          placeholder="Your email..." />
+        </p>
+
+        <p>
+          <input 
+          type="submit" 
+          name="submit" 
+          value="Login" />
+        </p>
+
+      </fieldset>
+    </form>
+  </body>
+</html>
